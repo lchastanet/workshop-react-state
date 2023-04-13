@@ -1,6 +1,21 @@
 import React from "react"
+import { useState } from "react"
+
+const defaultImg =
+  "https://gravatar.com/avatar/a8972cd4b8a5c54ad979335906e931b7?s=400&d=robohash&r=x"
 
 function Form() {
+  const [name, setName] = useState("Toto")
+  const [picture, setPicture] = useState(defaultImg)
+
+  const handleNameChange = (e) => {
+    setName(e.target.value)
+  }
+
+  const handlePictureChange = (e) => {
+    setPicture(e.target.value)
+  }
+
   const handleSubmit = (e) => {
     e.preventDefault()
     // do something
@@ -9,19 +24,29 @@ function Form() {
   return (
     <div className="profile-form">
       <div>
-        <img
-          src="https://gravatar.com/avatar/0920913a0f1a906d8f9eb2db7128e177?s=400&d=robohash&r=x"
-          alt="pseudo"
-        />
+        <img src={picture} alt="pseudo" />
         <p>
-          <strong>Name:</strong> Toto
+          <strong>Name:</strong>
+          {name}
         </p>
       </div>
       <form onSubmit={handleSubmit}>
         <label htmlFor="name">Name:</label>
-        <input type="text" name="name" id="name" />
+        <input
+          onChange={handleNameChange}
+          type="text"
+          name="name"
+          id="name"
+          value={name}
+        />
         <label htmlFor="picture">Picture adresse:</label>
-        <input type="text" name="picture" id="picture" />
+        <input
+          onChange={handlePictureChange}
+          type="text"
+          name="picture"
+          id="picture"
+          value={picture}
+        />
         <input type="submit" value="Enregistrer" />
       </form>
     </div>
