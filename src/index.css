@@ -1,0 +1,104 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex-grow: 1;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: solid black 1px;
+}
+
+header h1 {
+  margin: 0.5rem;
+}
+
+header div {
+  display: flex;
+  align-items: center;
+}
+
+header div img {
+  height: 3rem;
+  width: 3rem;
+  border-radius: 50%;
+  border: solid black 1px;
+  margin: 0.5rem;
+}
+
+header div p {
+  margin: 0.5rem;
+}
+
+main,
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+footer {
+  border-top: solid black 1px;
+  padding: 0.5rem;
+  font-size: small;
+}
+
+.profile-form {
+  border: solid grey 1px;
+  border-radius: 0.9rem;
+  padding: 1rem;
+}
+
+.profile-form div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.profile-form div p {
+  margin-top: 0.5rem;
+}
+
+.profile-form div img {
+  height: 7rem;
+  width: 7rem;
+  border-radius: 50%;
+  border: solid grey 1px;
+}
+
+.profile-form form {
+  display: flex;
+  flex-direction: column;
+  margin-top: 1.5rem;
+}
+
+.profile-form form input {
+  margin-bottom: 0.5rem;
+}
+
+.profile-form form label {
+  font-size: small;
+  margin-bottom: 0.2rem;
+}
+
+.profile-form form input:nth-child(5) {
+  margin-top: 0.7rem;
+}
