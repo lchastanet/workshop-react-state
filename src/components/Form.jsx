@@ -4,7 +4,7 @@ import { useState } from "react"
 const defaultImg =
   "https://gravatar.com/avatar/a8972cd4b8a5c54ad979335906e931b7?s=400&d=robohash&r=x"
 
-function Form() {
+function Form({ setUserInfo }) {
   const [name, setName] = useState("Toto")
   const [picture, setPicture] = useState(defaultImg)
 
@@ -18,7 +18,17 @@ function Form() {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    // do something
+
+    //const formData = new FormData(e.target)
+
+    //console.log(formData.keys())
+
+    // setUserInfo({
+    //   name: formData.get("name"),
+    //   picture: formData.get("picture"),
+    // })
+
+    setUserInfo({ name, picture })
   }
 
   return (
